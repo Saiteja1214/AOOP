@@ -1,0 +1,35 @@
+package sis;
+
+public class Main {
+    public static void main(String[] args) {
+        EnrollmentManager enrollmentManager = new EnrollmentManager();
+
+        // Create Students
+        Student student1 = new Student("1", "Alice");
+        Student student2 = new Student("2", "Bob");
+
+        // Add Students
+        enrollmentManager.addStudent(student1);
+        enrollmentManager.addStudent(student2);
+
+        // Create Courses
+        Course course1 = new Course("101", "Mathematics", CourseStatus.OPEN);
+        Course course2 = new Course("102", "Science", CourseStatus.CLOSED);
+
+        // Add Courses
+        enrollmentManager.addCourse(course1);
+        enrollmentManager.addCourse(course2);
+
+        // Enroll Students
+        enrollmentManager.enrollStudentInCourse("1", "101"); // Successful Enrollment
+        enrollmentManager.enrollStudentInCourse("2", "102"); // Should not enroll, course is closed
+
+        // Output enrolled students in course1
+        System.out.println("Students enrolled in " + course1.getCourseName() + ":");
+        for (Student student : course1.getEnrolledStudents()) {
+            System.out.println(student.getName());
+        }
+    }
+}
+
+
