@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Practical3b {
-}
