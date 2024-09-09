@@ -1,0 +1,4 @@
+interface SpecialStudent {
+    void applyDiscount();
+}
+
